@@ -1,4 +1,4 @@
-var browserSync = require('browser-sync');
+var browserSync = require( 'browser-sync' );
 var reload = browserSync.reload;
 
 module.exports = function( gulp, plugins ) {
