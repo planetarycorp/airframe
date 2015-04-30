@@ -1,5 +1,5 @@
-var browserSync = require( 'browser-sync' ),
-    hygienist = require('hygienist-middleware');
+var browserSync = require( 'browser-sync' );
+var hygienist = require('hygienist-middleware');
 
 module.exports = function( gulp, plugins, path ) {
     gulp.task('browser-sync', 'serves the build using BrowserSync', function() {

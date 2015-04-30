@@ -5,7 +5,7 @@ var handleError = function( err ) {
 };
 
 var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+var reload = browserSync.reload;
 
 module.exports = function( gulp, plugins ) {
     // concat, minify css
@@ -18,7 +18,7 @@ module.exports = function( gulp, plugins ) {
         .pipe( plugins.autoprefixer() )
         .pipe( plugins.sourcemaps.write() )
         .pipe( gulp.dest( './build/css' ) )
-        .pipe( reload({stream: true}) )
+        .pipe( reload( { stream: true } ) )
         .pipe( plugins.notify( { message: 'scss compilation complete', onLast: true } ) );
     } );
 

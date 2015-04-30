@@ -1,5 +1,5 @@
 var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+var reload = browserSync.reload;
 
 module.exports = function( gulp, plugins ) {
     var errorHandler = function( err ) {
@@ -18,7 +18,7 @@ module.exports = function( gulp, plugins ) {
             } ) )
             .on( 'error', errorHandler )
             .pipe( gulp.dest( 'build' ) )
-            .pipe( reload({stream:true}) );
+            .pipe( reload( { stream:true } ) );
     } );
 
     gulp.task( 'watch:templates', 'watches the templates for changes and runs the templates task', function() {
