@@ -23,7 +23,7 @@ In addition to the compilation tasks, Airframe includes:
 ### Getting Started
 
 ```bash
-$ git clone git@github.com:planetarycorp/airframe
+$ git clone https://github.com/planetary/airframe.git
 $ cd airframe
 $ npm install
 ```
@@ -32,7 +32,7 @@ Then, run `gulp build` to build the project.
 
 ### Developing
 Run `gulp` to continuously watch and re-build the project. Airframe will automatically run a server
-from the `build` folder at `localhost:3000`.
+from the `build` folder at `localhost:8080`. BrowserSync is used to automatically update assets.
 
 ### Gulp Tasks
 | Task              |  Description                                                                           |
