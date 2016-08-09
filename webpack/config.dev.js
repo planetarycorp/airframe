@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const assetsPath = path.resolve(__dirname, '..', 'assets');
@@ -20,8 +19,8 @@ module.exports = {
         path.resolve(assetsDir.scripts, 'index.js')
     ],
     output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js',
+        path: path.resolve(process.cwd(), 'build'),
+        filename: 'scripts/bundle.js',
         publicPath: '/'
     },
     module: {
@@ -29,7 +28,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel',
-                include: assetsDir.scripts
+                include: assetsDir.scripts,
+                query: {
+                    cacheDirectory: true
+                }
             },
             {
                 test: /\.scss$/,
@@ -45,7 +47,7 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
-                    'file?name=[path][name].[hash].[ext]',
+                    'file?name=images/[name].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ],
                 include: assetsDir.images
@@ -55,7 +57,7 @@ module.exports = {
                 loader: 'url',
                 include: assetsDir.fonts,
                 query: {
-                    name: '[hash].[ext]',
+                    name: 'fonts/[name].[ext]',
                     limit: 5000,
                     mimetype: 'application/font-woff'
                 }
@@ -65,12 +67,14 @@ module.exports = {
                 loader: 'file',
                 include: assetsDir.fonts,
                 query: {
-                    name: '[hash].[ext]'
+                    name: 'fonts/[name].[ext]'
                 }
             }
         ]
     },
-    postcss: [autoprefixer()],
+    postcss: [
+        require('postcss-cssnext')
+    ],
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(assetsDir.templates, 'views', 'index.pug')
