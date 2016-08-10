@@ -22,14 +22,13 @@
     "npm": ">=2.1.18"
   },
   "scripts": {
-    "build": "npm run clean && npm run prod",
-    "clean": "rm -rf build",
-    "dev": "cross-env NODE_ENV=development node webpack/devServer.js",
-    "prod": "cross-env NODE_ENV=production webpack --config webpack/config.prod.js",
-    "lint": "eslint assets",
-    "start": "",
-    "test": "",
-    "test:watch": ""
+    "prebuild": "rimraf build",
+    "build": "webpack --env.prod -p",
+    "prebuild:dev": "rimraf build",
+    "build:dev": "webpack --env.dev",
+    "dev": "webpack-dev-server --env.dev --inline --hot",
+    "validate": "npm-run-all --parallel lint build",
+    "lint": "eslint assets"
   },
   "dependencies": {
     "babel-cli": "^6.11.4",
@@ -38,27 +37,28 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
     "babel-register": "^6.11.6",
-    "chai": "^3.4.1",
-    "cross-env": "^2.0.0",
     "css-loader": "^0.23.1",
     "eslint": "^1.10.3",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "image-webpack-loader": "^2.0.0",
-    "isparta": "^4.0.0",
-    "mocha": "^2.3.4",
-    "mocha-junit-reporter": "^1.9.1",
+    "inline-manifest-webpack-plugin": "^3.0.1",
     "node-sass": "^3.8.0",
+    "npm-run-all": "^2.3.0",
     "postcss-cssnext": "^2.7.0",
     "postcss-loader": "^0.9.1",
+    "progress-bar-webpack-plugin": "^1.9.0",
     "pug": "^2.0.0-beta4",
     "pug-loader": "^2.2.1",
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.20",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-config-utils": "^2.0.0",
+    "webpack-dev-server": "^2.1.0-beta.0",
+    "webpack-md5-hash": "0.0.5",
+    "webpack-validator": "^2.2.7"
   }
 }
