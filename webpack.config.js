@@ -4,6 +4,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineManifestPlugin = require('inline-manifest-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const WebpackMD5Hash = require('webpack-md5-hash');
 const webpackValidator = require('webpack-validator');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
@@ -79,6 +80,9 @@ module.exports = (env) => {
             new ProgressBarPlugin(),
             ifProd(new ExtractTextPlugin('styles/styles-[chunkhash:8].css')),
             ifProd(new InlineManifestPlugin()),
+            ifProd(new webpack.optimize.CommonsChunkPlugin({
+                name: 'manifest'
+            })),
             ifProd(new webpack.optimize.DedupePlugin()),
             new webpack.optimize.OccurrenceOrderPlugin(),
             new WebpackMD5Hash(),
@@ -88,6 +92,14 @@ module.exports = (env) => {
             new HtmlWebpackPlugin({
                 template: './templates/views/styles.pug',
                 filename: 'styles.html'
+            }),
+            new CopyPlugin([
+                // Copy fonts to build directory
+                {from: 'fonts', to: 'fonts'}
+            ], {
+                ignore: [
+                    '.*'
+                ]
             }),
             new webpack.DefinePlugin({
                 'process.env': {
