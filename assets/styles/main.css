@@ -7,25 +7,25 @@
 /_/  |_/_/_/  /_/ /_/   \__,_/_/ /_/ /_/\___/
 
 
-Bootstrap kit v0.2 - January 26 2015
+Bootstrap kit v1.0 - August 11 2016
 
 */
 
-// import any vendor files
+/* import any vendor files */
 @import 'vendor/normalize';
-@import 'vendor/includemedia';
 @import 'vendor/selectcss';
 
-// project-wide styles - styles single elements
+/* project-wide styles - styles single elements */
 @import 'global/color';
 @import 'global/type';
 @import 'global/grid';
+@import 'global/media';
 
-// component styles - styles groups of elements
+/* component styles - styles groups of elements */
 @import 'components/forms';
 @import 'components/buttons';
 @import 'components/tables';
 
-// page layouts - styles groups of components
+/* page layouts - styles groups of components */
 @import 'layouts/global';
 @import 'layouts/styleguide';

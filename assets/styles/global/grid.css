@@ -1,0 +1,63 @@
+/* AGS - Airframe grid system
+ * v0.1 */
+
+ :root {
+     /* Grid configuration */
+     --grid-width: 70rem;
+     --gutter: 2%;
+
+     --row-spacing: 1rem;
+     --corner-radius: 4px;
+
+     @define-mixin row {
+         margin-bottom: var(--row-spacing);
+         padding: 0 calc(var(--gutter) / 2);
+         display: flex;
+         flex-flow: row;
+         align-items: stretch;
+         justify-content: center;
+     }
+
+     @define-mixin column-fixed $span {
+         flex: 0 0 calc(($(span) * 100%) - var(--gutter));
+         margin: 0 calc(var(--gutter) / 2);
+     }
+
+     @define-mixin column-flex {
+         flex: 1;
+         margin: 0 calc(var(--gutter) / 2);
+     }
+
+     @define-mixin visible-grid {
+         background: color(var(--blue) a(90%));
+     }
+ }
+
+/* Helper classes */
+
+.g--container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--grid-width);
+}
+.g--row {
+    @mixin row;
+}
+.g--visible-grid {
+    @mixin visible-grid;
+}
+.g--full {
+    @mixin column-fixed 1;
+}
+.g--half {
+    @mixin column-fixed calc(1 / 2);
+}
+.g--third {
+    @mixin column-fixed calc(1 / 3);
+}
+.g--quarter {
+    @mixin column-fixed calc(1 / 4);
+}
+.g--auto {
+    @mixin column-flex;
+}

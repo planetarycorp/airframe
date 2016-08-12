@@ -1,4 +1,4 @@
-require('../styles/main.scss');
+require('../styles/main.css');
 
 if(module.hot) module.hot.accept();
 

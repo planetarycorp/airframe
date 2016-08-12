@@ -1,0 +1,10 @@
+.sg--component {
+    margin: 1rem 0;
+}
+
+.sg--component-label {
+    font-family: var(--type-family-sans);
+    font-size: var(--scale-small);
+    color: var(--gray);
+    display: block;
+}

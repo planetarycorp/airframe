@@ -38,11 +38,11 @@ module.exports = (env) => {
                     }
                 },
                 {
-                    test: /\.scss$/,
+                    test: /\.css$/,
                     loader: ifProd(ExtractTextPlugin.extract({
                         fallbackLoader: 'style',
-                        loader: 'css!postcss!sass'
-                    }), 'style!css!postcss!sass')
+                        loader: 'css!postcss'
+                    }), 'style!css!postcss')
                 },
                 {
                     test: /\.pug$/,
@@ -73,9 +73,16 @@ module.exports = (env) => {
                 }
             ]
         },
-        postcss: [
-            require('postcss-cssnext')
-        ],
+        postcss(wp) {
+            return [
+                require('postcss-import')({
+                    addDependencyTo: wp
+                }),
+                require('postcss-mixins'),
+                require('postcss-cssnext'),
+                require('postcss-modular-scale')
+            ];
+        },
         plugins: removeEmpty([
             new ProgressBarPlugin(),
             ifProd(new ExtractTextPlugin('styles/styles-[chunkhash:8].css')),
