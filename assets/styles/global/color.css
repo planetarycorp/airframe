@@ -1,7 +1,7 @@
 :root {
     /* grays */
-    --black:             #222;
-    --white:             #fff;
+    --black:             #222222;
+    --white:             #ffffff;
 
     --gray-darker:       color(var(--black) blend(var(--white) 10%));
     --gray-dark:         color(var(--black) blend(var(--white) 30%));

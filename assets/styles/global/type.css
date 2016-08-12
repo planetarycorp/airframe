@@ -12,16 +12,13 @@
     --type-weight-light:    300;
     --type-weight-thin:     100;
 
-    --ms-bases: 1;
-    --ms-ratios: 1.5;
-
-    --scale-huge:       ms(3)rem;
-    --scale-xlarge:     ms(2)rem;
-    --scale-large:      ms(1)rem;
-    --scale-normal:     ms(0)rem;
-    --scale-small:      ms(-1)rem;
-    --scale-xsmall:     ms(-2)rem;
-    --scale-tiny:       ms(-3)rem;
+    --scale-huge:       var(--ms3);
+    --scale-xlarge:     var(--ms2);
+    --scale-large:      var(--ms1);
+    --scale-normal:     var(--ms0);
+    --scale-small:      var(--ms-1);
+    --scale-xsmall:     var(--ms-2);
+    --scale-tiny:       var(--ms-3);
 }
 
 .type--sans {

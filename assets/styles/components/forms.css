@@ -194,7 +194,7 @@ textarea {
        top: 50%;
        right: 1rem;
        margin-top: -0.25rem;
-       border-width: 0.5rem 0.325rem 0;
+       border-width: 0.5rem 0.33rem 0;
        border-color: var(--gray-dark) transparent transparent;
        border-style: solid;
        z-index: 2;
