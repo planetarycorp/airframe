@@ -12,14 +12,14 @@ Bootstrap kit v1.0 - August 11 2016
 */
 
 /* import any vendor files */
-@import 'vendor/normalize';
 @import 'vendor/selectcss';
 @import 'vendor/modularscale';
 
 /* project-wide styles - styles single elements */
+@import 'global/reset';
 @import 'global/color';
 @import 'global/type';
-@import 'global/grid';
+@import 'global/layout';
 @import 'global/media';
 
 /* component styles - styles groups of elements */

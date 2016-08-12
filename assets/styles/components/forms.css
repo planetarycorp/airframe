@@ -146,7 +146,6 @@ textarea {
 }
 
 /* Cross-browser custom select boxes thanks to https://github.com/filamentgroup/select-css. */
-
 .form--select {
    position: relative;
    display: block;
@@ -197,7 +196,7 @@ textarea {
        border-width: 0.5rem 0.33rem 0;
        border-color: var(--gray-dark) transparent transparent;
        border-style: solid;
-       z-index: 2;
+       z-index: var(--z-high);
        pointer-events: none;
    }
 }

@@ -21,15 +21,15 @@
     --scale-tiny:       var(--ms-3);
 }
 
-.type--sans {
+.t--family-sans {
     font-family: var(--type-family-sans);
 }
 
-.type--serif {
+.t--family-serif {
     font-family: var(--type-family-serif);
 }
 
-.type--mono {
+.t--family-mono {
     font-family: var(--type-family-mono);
 }
 
@@ -40,15 +40,8 @@ html {
     line-height: var(--type-base-leading);
     font-family: var(--type-family-serif);
     color: var(--black);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
     font-feature-settings: 'kern';
     font-kerning: normal;
-}
-
-/* bold */
-strong {
-    font-weight: bold;
 }
 
 /* italics */
