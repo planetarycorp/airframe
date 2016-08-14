@@ -3,8 +3,8 @@
 }
 
 .sg--component-label {
-    font-family: var(--type-family-sans);
-    font-size: var(--scale-small);
-    color: var(--gray);
     display: block;
+    font-family: var(--t--family-sans);
+    font-size: var(--t--size-small);
+    color: var(--c--gray);
 }

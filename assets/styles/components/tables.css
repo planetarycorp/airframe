@@ -3,7 +3,7 @@ table {
 }
 
 thead {
-    font-weight: var(--type-weight-bold);
+    font-weight: var(--t--weight-bold);
     text-align: left;
 }
 
@@ -13,9 +13,9 @@ th {
 }
 
 td {
-    border-top: 1px solid var(--gray-lighter);
+    border-top: 1px solid var(--c--gray-lighter);
 }
 
 th {
-    border-bottom: 2px solid var(--gray-lighter);
+    border-bottom: 2px solid var(--c--gray-lighter);
 }
