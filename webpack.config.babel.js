@@ -4,6 +4,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineManifestPlugin = require('inline-manifest-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebpackMD5Hash = require('webpack-md5-hash');
 const webpackValidator = require('webpack-validator');
@@ -39,11 +40,11 @@ module.exports = (env) => {
                     }
                 },
                 {
-                    test: /\.scss$/,
+                    test: /\.css$/,
                     loader: ifProd(ExtractTextPlugin.extract({
                         fallbackLoader: 'style',
-                        loader: 'css!postcss!sass'
-                    }), 'style!css!postcss!sass')
+                        loader: 'css!postcss'
+                    }), 'style!css!postcss')
                 },
                 {
                     test: /\.pug$/,
@@ -74,13 +75,23 @@ module.exports = (env) => {
                 }
             ]
         },
-        postcss: [
-            require('postcss-cssnext')
-        ],
+        postcss(wp) {
+            return [
+                require('postcss-import')({
+                    addDependencyTo: wp
+                }),
+                require('postcss-mixins'),
+                require('postcss-cssnext')
+            ];
+        },
         plugins: removeEmpty([
             new ProgressBarPlugin(),
             ifNotProd(new ReloadPlugin()),
             ifProd(new ExtractTextPlugin('styles/styles-[chunkhash:8].css')),
+            new StyleLintPlugin({
+                configFile: '.stylelintrc',
+                files: 'styles/**/*.css'
+            }),
             ifProd(new InlineManifestPlugin()),
             ifProd(new webpack.optimize.CommonsChunkPlugin({
                 name: 'manifest'
