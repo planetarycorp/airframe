@@ -1,5 +1,5 @@
 :root {
     @custom-media --wt-phone (width >= 320px);
     @custom-media --wt-tablet (width >= 768px);
-    @custom-media --wt-desktop (with >= 1024px);
+    @custom-media --wt-desktop (width >= 1024px);
 }
