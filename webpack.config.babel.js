@@ -9,6 +9,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const WebpackMD5Hash = require('webpack-md5-hash');
 const webpackValidator = require('webpack-validator');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
+const ReloadPlugin = require('reload-html-webpack-plugin');
 
 module.exports = (env) => {
     const {ifProd, ifNotProd} = getIfUtils(env);
@@ -85,6 +86,7 @@ module.exports = (env) => {
         },
         plugins: removeEmpty([
             new ProgressBarPlugin(),
+            ifNotProd(new ReloadPlugin()),
             ifProd(new ExtractTextPlugin('styles/styles-[chunkhash:8].css')),
             new StyleLintPlugin({
                 configFile: '.stylelintrc',
