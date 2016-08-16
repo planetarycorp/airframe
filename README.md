@@ -25,8 +25,7 @@ $ npm install
 
 ### Developing
 Run `npm run dev` to continuously watch and re-build the project. Airframe will automatically run a server
-from the `build` folder at `localhost:8080`. Webpack will hot-reload styles and scripts, and will automatically
-refresh the browser on template updates.
+from the `build` folder at `localhost:8080`. Webpack will hot-reload styles and scripts.
 
 ### Installing Sublime Text Helpers
 
