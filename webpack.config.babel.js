@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -12,6 +13,24 @@ const WebpackMD5Hash = require('webpack-md5-hash');
 const webpackValidator = require('webpack-validator');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
 const {ifProd, ifNotProd} = getIfUtils(process.env.NODE_ENV);
+
+// Loads an HtmlWebpackPlugin for each template in the assets/views directory
+const loadHtmlPlugin = () => {
+    const files = fs.readdirSync(path.resolve('assets', 'templates', 'views'));
+
+    return files.map((file) => {
+        const ext = path.extname(file);
+
+        if(ext === '.pug') {
+            const name = path.basename(file, ext);
+
+            return new HtmlWebpackPlugin({
+                template: `./templates/views/${file}`,
+                filename: `${name}.html`
+            });
+        }
+    });
+};
 
 module.exports = webpackValidator({
     context: path.resolve('assets'),
@@ -106,13 +125,7 @@ module.exports = webpackValidator({
         ifProd(new webpack.optimize.DedupePlugin()),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new WebpackMD5Hash(),
-        new HtmlWebpackPlugin({
-            template: './templates/views/index.pug'
-        }),
-        new HtmlWebpackPlugin({
-            template: './templates/views/styles.pug',
-            filename: 'styles.html'
-        }),
+        ...loadHtmlPlugin(),
         new CopyPlugin([
             // Copy fonts to build directory
             {from: 'fonts', to: 'fonts'}
