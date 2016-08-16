@@ -19,7 +19,7 @@ module.exports = webpackValidator({
         './scripts/index.js'
     ],
     output: {
-        filename: 'scripts/bundle.js',
+        filename: ifProd('scripts/bundle-[chunkhash:8].js', 'scripts/bundle.js'),
         path: path.resolve('build'),
         pathinfo: ifNotProd(),
         publicPath: '/'
@@ -51,7 +51,14 @@ module.exports = webpackValidator({
                 loader: 'pug'
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.(jpe?g|png|gif)$/,
+                loaders: [
+                    'url?limit=10000&name=images/[name].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
+            },
+            {
+                test: /\.svg$/,
                 loaders: [
                     'file?name=images/[name].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'

@@ -24,10 +24,10 @@
   "scripts": {
     "prebuild": "rimraf build",
     "build": "cross-env NODE_ENV=prod webpack -p",
-    "postbuild": "imagemin assets/images/* --out-dir=build",
+    "postbuild": "imagemin assets/images/* --out-dir=build/images",
     "prebuild:dev": "rimraf build",
     "build:dev": "cross-env NODE_ENV=dev webpack",
-    "postbuild:dev": "imagemin assets/images/* --out-dir=build",
+    "postbuild:dev": "imagemin assets/images/* --out-dir=build/images",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --inline --hot",
     "validate": "npm-run-all --parallel lint build",
     "lint": "eslint assets"
