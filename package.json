@@ -61,6 +61,7 @@
     "pug": "^2.0.0-beta4",
     "pug-loader": "^2.2.1",
     "pug-walk": "0.0.3",
+    "reload-html-webpack-plugin": "^0.1.2",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "stylelint-webpack-plugin": "^0.3.0",

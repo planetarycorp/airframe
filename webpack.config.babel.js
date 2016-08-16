@@ -6,6 +6,7 @@ const InlineManifestPlugin = require('inline-manifest-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ReloadPlugin = require('reload-html-webpack-plugin');
 const WebpackMD5Hash = require('webpack-md5-hash');
 
 const webpackValidator = require('webpack-validator');
@@ -85,6 +86,7 @@ module.exports = webpackValidator({
     },
     plugins: removeEmpty([
         ifNotProd(new ProgressBarPlugin()),
+        ifNotProd(new ReloadPlugin()),
         ifProd(new ExtractTextPlugin('styles/styles-[chunkhash:8].css')),
         new StyleLintPlugin({
             configFile: '.stylelintrc',
