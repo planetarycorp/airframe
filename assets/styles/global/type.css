@@ -51,7 +51,7 @@ html {
     font-family: var(--t--family-sans);
     color: var(--c--black);
     font-feature-settings: 'kern';
-    font-kerning: m;
+    font-kerning: normal;
 }
 
 em {
