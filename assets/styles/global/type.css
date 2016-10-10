@@ -123,6 +123,7 @@ pre,
 code {
     font-family: var(--t--family-mono);
     font-size: 90%;
+    white-space: pre-wrap;
 }
 
 /* links */
