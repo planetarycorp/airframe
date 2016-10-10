@@ -5,11 +5,11 @@ block title
 
 block content
     header
-        nav.l--grid-container
-            .l--grid-row.l--pad-top-m.l--pad-bot-m
-                .l--grid-col-3.l--grid-col-12-at-s.l--grid-col-6-at-m
+        nav.l--container
+            .l--row.l--pad-top-m.l--pad-btm-m
+                .l--col-3.l--col-12-at-s.l--col-6-at-m
                     <svg style="width:20%; height: auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M88.63 163.3L86 145.58a.49.49 0 0 0-.56-.42H63.52a.49.49 0 0 0-.56.42l-2.65 17.72a.49.49 0 0 1-.56.42H47.62a.64.64 0 0 1-.56-.7l21.2-120.39a.49.49 0 0 1 .56-.42h11a.59.59 0 0 1 .56.42L101.74 163a.62.62 0 0 1-.56.7H88.91a.47.47 0 0 1-.28-.4zm-23.16-30h17.86a.6.6 0 0 0 .56-.56L75 73.88a.58.58 0 0 0-1.12 0l-8.93 58.87c-.17.25.11.56.52.56zM106.76 162.74V42.36a.6.6 0 0 1 .56-.56h38.08a.6.6 0 0 1 .56.56v11.15a.6.6 0 0 1-.56.56h-24.82a.6.6 0 0 0-.56.56v28.74a.6.6 0 0 0 .56.56h21.34a.6.6 0 0 1 .56.56v10.73a.6.6 0 0 1-.56.56h-21.34a.6.6 0 0 0-.56.56v66.4a.6.6 0 0 1-.56.56h-12.14a.6.6 0 0 1-.56-.56z"/><path d="M188 12v176H12V12h176m12-12H0v200h200V0z"/></svg>
-                .l--grid-col-9.t--align-right.l--grid-col-6-at-m.l--grid-hidden-at-s
+                .l--col-9.t--align-right.l--col-6-at-m.l--hidden-at-s
                     ul.t--list-inline
                         li.l--pad-left-m
                             a(href="/intro.html") Documentation
@@ -20,14 +20,14 @@ block content
 
     main
         section
-            .l--grid-container
-                .l--grid-row.l--pad-top-l.l--pad-bot-l
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-m
+            .l--container
+                .l--row.l--pad-top-l.l--pad-btm-l
+                    .l--col-6.l--col-12-at-m.l--pad-btm-m
                         h3 Meet Airframe
                         p Airframe allows you to rapidly prototype sites by providing a lightweight scaffold. It makes suggestions without being too prescriptive.
                         a(href="").button.button--primary Download Files
                         a(href="").button Learn More
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-m
+                    .l--col-6.l--col-12-at-m.l--pad-btm-m
                         pre.docs--code
                             code.nohighlight.
                                 $ git clone git@github.com:planetary/airframe
@@ -36,60 +36,60 @@ block content
                                 $ npm run dev
 
         section.c--bg-gray-lighter
-            .l--grid-container
-                .l--grid-row.t--align-center.l--pad-top-m.l--pad-bot-m
-                    .l--grid-col-4.l--grid-col-12-at-m.l--pad-bot-s
+            .l--container
+                .l--row.t--align-center.l--pad-top-m.l--pad-btm-m
+                    .l--col-4.l--col-12-at-m.l--pad-btm-s
                         span.t--size-l(data-tooltip="Get started by downloading or cloning the zip files.") 1. Download Files
-                    .l--grid-col-4.l--grid-col-12-at-m.l--pad-bot-s
+                    .l--col-4.l--col-12-at-m.l--pad-btm-s
                         span.t--size-l(data-tooltip="Run npm install to initialize the project.") 2. Install Dependencies
-                    .l--grid-col-4.l--grid-col-12-at-m.l--pad-bot-s
+                    .l--col-4.l--col-12-at-m.l--pad-btm-s
                         span.t--size-l(data-tooltip="When you're ready to start building, run the build script!") 3. Start Building
 
 
 
         section
-            .l--grid-container.l--pad-top-l.l--pad-bot-l
-                .l--grid-row
-                    .l--grid-col-12
+            .l--container.l--pad-top-l.l--pad-btm-l
+                .l--row
+                    .l--col-12
                         h3 Grid System
-                .l--grid-row
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-s
+                .l--row
+                    .l--col-6.l--col-12-at-m.l--pad-btm-s
                         .docs--example
-                            .l--grid-row
-                                .l--grid-col-6.c--bg-gray-lighter.l--pad-s.
+                            .l--row
+                                .l--col-6.c--bg-gray-lighter.l--pad-s.
                                     1/2
-                                .l--grid-col-6.c--bg-gray-lighter.l--pad-s.
+                                .l--col-6.c--bg-gray-lighter.l--pad-s.
                                     1/2
-                            .l--grid-row
-                                .l--grid-col-4.c--bg-gray-lighter.l--pad-s.
+                            .l--row
+                                .l--col-4.c--bg-gray-lighter.l--pad-s.
                                     1/3
-                                .l--grid-col-4.c--bg-gray-lighter.l--pad-s.
+                                .l--col-4.c--bg-gray-lighter.l--pad-s.
                                     1/3
-                                .l--grid-col-4.c--bg-gray-lighter.l--pad-s.
+                                .l--col-4.c--bg-gray-lighter.l--pad-s.
                                     1/3
 
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-s
+                    .l--col-6.l--col-12-at-m.l--pad-btm-s
                         pre.docs--code
                             code.html.
-                                &lt;div class=&quot;l--grid-container&quot;&gt;
-                                    &lt;div class=&quot;l--grid-row&quot;&gt;
-                                        &lt;div class=&quot;l--grid-col-6&quot;&gt;1/2&lt;/div&gt;
-                                        &lt;div class=&quot;l--grid-col-6&quot;&gt;1/2&lt;/div&gt;
+                                &lt;div class=&quot;l--container&quot;&gt;
+                                    &lt;div class=&quot;l--row&quot;&gt;
+                                        &lt;div class=&quot;l--col-6&quot;&gt;1/2&lt;/div&gt;
+                                        &lt;div class=&quot;l--col-6&quot;&gt;1/2&lt;/div&gt;
                                     &lt;/row&gt;
-                                    &lt;div class=&quot;l--grid-row&quot;&gt;
-                                        &lt;div class=&quot;l--grid-col-4&quot;&gt;1/3&lt;/div&gt;
-                                        &lt;div class=&quot;l--grid-col-4&quot;&gt;1/3&lt;/div&gt;
-                                        &lt;div class=&quot;l--grid-col-4&quot;&gt;1/3&lt;/div&gt;
+                                    &lt;div class=&quot;l--row&quot;&gt;
+                                        &lt;div class=&quot;l--col-4&quot;&gt;1/3&lt;/div&gt;
+                                        &lt;div class=&quot;l--col-4&quot;&gt;1/3&lt;/div&gt;
+                                        &lt;div class=&quot;l--col-4&quot;&gt;1/3&lt;/div&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
 
         section
-            .l--grid-container.l--pad-bot-l
-                .l--grid-row
-                    .l--grid-col-12
+            .l--container.l--pad-btm-l
+                .l--row
+                    .l--col-12
                         h3 Form Reset
-                .l--grid-row
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-s
+                .l--row
+                    .l--col-6.l--col-12-at-m.l--pad-btm-s
                         .docs--example
                             label Text input
                                 input(type="text", placeholder="Text input")
@@ -118,7 +118,7 @@ block content
                                     input(type="radio")
                                     | Radio Option 2
 
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-s
+                    .l--col-6.l--col-12-at-m.l--pad-btm-s
                         pre.docs--code
                             code.html.
                                 &lt;div class=&quot;docs--example&quot;&gt;
@@ -160,12 +160,12 @@ block content
                                 &lt;/div&gt;
 
         section
-            .l--grid-container
-                .l--grid-row
-                    .l--grid-col-12
+            .l--container
+                .l--row
+                    .l--col-12
                         h3 Type utilities
-                .l--grid-row
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-s
+                .l--row
+                    .l--col-6.l--col-12-at-m.l--pad-btm-s
                         .docs--example
                             .t--size-xxl The quick brown fox
                             .t--size-xl Both fickle dwarves
@@ -173,7 +173,7 @@ block content
                             .t--size-m Quilt frenzy jackdaw gave them best pox
                             .t--size-s Jim quickly realized that the beautiful gowns are expensive.
 
-                    .l--grid-col-6.l--grid-col-12-at-m.l--pad-bot-s
+                    .l--col-6.l--col-12-at-m.l--pad-btm-s
                         pre.docs--code
                             code.html.
                                 &lt;div class=&quot;t--size-xxl&quot;&gt;
@@ -194,14 +194,14 @@ block content
                                 &lt;/div&gt;
 
     footer
-        .l--grid-container
-            .l--grid-row.l--pad-l
-                .l--grid-col-12.t--align-center
+        .l--container
+            .l--row.l--pad-l
+                .l--col-12.t--align-center
                     a(href="/intro.html").t--size-l Read the full documentation
-            .l--grid-row
-                .l--grid-col-3.l--grid-col-12-at-s.l--pad-bot-s
+            .l--row
+                .l--col-3.l--col-12-at-s.l--pad-btm-s
                     <svg style="width:80%; height: auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 166"><path d="M500 166H0V0h500v166zM8.3 157.7h483.4V8.3H8.3v149.4z"/><path d="M58.3 126.5v-87h19.1c13.3 0 16 6.4 16 16.1v8c0 10.9-5.2 16-16.3 16h-9.3v46.9h-9.5zm9.4-55.3h8.7c5 0 7.6-2.7 7.6-7.9v-8.7c0-5.2-2.7-7.9-7.8-7.9h-8.5v24.5zM102.9 126.5v-87h9.5v78.3h14.9v8.7h-24.4M216.5 126.5l-21.4-66.2v66.2h-8v-87h9.5l21.6 64.8V39.5h7.6v87h-9.3M239.3 126.5v-87h28.1v8.8h-18.6v21.4h16.1v8.4h-16.1v39.7h18.6v8.7h-28.1M289.5 126.5V48.3h-12.1v-8.8h33.8v8.8H299v78.2h-9.5M418.6 126.5V82.7l-13.2-43.2h9.1l8.8 33.3 8.8-33.3h9.3l-13.3 43.2v43.8h-9.5M165.5 126.5l-2-13.3h-16.3l-2 13.3h-9.5l15.4-87h8.6l15.4 87h-9.6zm-17.1-21.7h13.8l-6.9-45.1zM344 126.5l-2-13.3h-16.3l-2 13.3h-9.5l15.4-87h8.6l15.4 87H344zm-17.1-21.7h13.8l-6.9-45.1zM390.2 126.5L376.6 80h-3.8v46.5h-9.4v-87h19.1c13.3 0 16 6.2 16 16.1V64c0 9-3.3 13.9-10.4 15.4l-1.8.4 13.6 46.7h-9.7zm-17.4-54.9h8.7c5 0 7.6-2.7 7.6-7.9v-9.1c0-5.2-2.7-7.9-7.8-7.9h-8.5v24.9z"/></svg>
-                .l--grid-col-auto
+                .l--col-auto
                     h4 About Planetary
                     p.p-about We are a multi-disciplinary team of designers and developers working to build and launch great products. If you'd like to know more or get in touch, visit our <a href="http://planetary.io">website</a>!
 
