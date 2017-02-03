@@ -30,7 +30,7 @@
     "validate": "npm-run-all --parallel lint build",
     "lint": "eslint assets"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
