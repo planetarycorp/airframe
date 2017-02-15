@@ -3872,7 +3872,7 @@ lodash@^4.0.0, lodash@^4.1.0, lodash@^4.16.2, lodash@^4.2.0, lodash@^4.3.0:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.4.tgz#01ce306b9bad1319f2a5528674f88297aeb70127"
 
-lodash@^4.14.0, lodash@^4.17.3:
+lodash@^4.14.0, lodash@^4.16.6, lodash@^4.17.3:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -6295,9 +6295,19 @@ stylehacks@^2.3.0:
     text-table "^0.2.0"
     write-file-stdout "0.0.2"
 
-stylelint-config-planetary:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-planetary/-/stylelint-config-planetary-1.0.0.tgz#9614fe331aec1f7db546bd1782b0880e7fbb72d9"
+stylelint-config-planetary@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-config-planetary/-/stylelint-config-planetary-1.0.1.tgz#5d9f87c0c854063cc8066dd338dff0d90c99311b"
+  dependencies:
+    stylelint-order "^0.2.2"
+
+stylelint-order@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-0.2.2.tgz#c1fd77cf3565bd223c233b9e7bb98728c0abe8bd"
+  dependencies:
+    lodash "^4.16.6"
+    postcss "^5.2.5"
+    stylelint "^7.5.0"
 
 stylelint-webpack-plugin@^0.4.2:
   version "0.4.2"
@@ -6309,7 +6319,46 @@ stylelint-webpack-plugin@^0.4.2:
     stylelint "^7.7.0"
     webpack "^1.13.2"
 
-stylelint@^7.7.0, stylelint@^7.7.1:
+stylelint@^7.5.0, stylelint@7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.8.0.tgz#ac701044ed03c44f7a9f73d4d5dc1bd1eaae12d1"
+  dependencies:
+    autoprefixer "^6.0.0"
+    balanced-match "^0.4.0"
+    chalk "^1.1.1"
+    colorguard "^1.2.0"
+    cosmiconfig "^2.1.1"
+    doiuse "^2.4.1"
+    execall "^1.0.0"
+    get-stdin "^5.0.0"
+    globby "^6.0.0"
+    globjoin "^0.1.4"
+    html-tags "^1.1.1"
+    ignore "^3.2.0"
+    known-css-properties "^0.0.6"
+    lodash "^4.0.0"
+    log-symbols "^1.0.2"
+    meow "^3.3.0"
+    micromatch "^2.3.11"
+    normalize-selector "^0.2.0"
+    postcss "^5.0.20"
+    postcss-less "^0.14.0"
+    postcss-media-query-parser "^0.2.0"
+    postcss-reporter "^3.0.0"
+    postcss-resolve-nested-selector "^0.1.1"
+    postcss-scss "^0.4.0"
+    postcss-selector-parser "^2.1.1"
+    postcss-value-parser "^3.1.1"
+    resolve-from "^2.0.0"
+    specificity "^0.3.0"
+    string-width "^2.0.0"
+    style-search "^0.1.0"
+    stylehacks "^2.3.0"
+    sugarss "^0.2.0"
+    svg-tags "^1.0.0"
+    table "^4.0.1"
+
+stylelint@^7.7.0:
   version "7.7.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.7.1.tgz#af30b6677e307d38b0ad64b70e719c1752973c67"
   dependencies:
