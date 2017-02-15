@@ -6295,6 +6295,10 @@ stylehacks@^2.3.0:
     text-table "^0.2.0"
     write-file-stdout "0.0.2"
 
+stylelint-config-planetary:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-planetary/-/stylelint-config-planetary-1.0.0.tgz#9614fe331aec1f7db546bd1782b0880e7fbb72d9"
+
 stylelint-webpack-plugin@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-0.4.2.tgz#db8b48a446a73868a5866005d568115baa05d091"
